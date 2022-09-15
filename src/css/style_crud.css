@@ -1,0 +1,177 @@
+:root {
+  --primary-color: #fd951f;
+  --bg-color: #130f0d;
+  --text-color: #f0f0f5;
+  --light-color: rgba(255, 255, 255, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+form {
+  /* cria um background com transparencia de 0.0,3 */
+  background: rgba(255, 255, 255, 0.03);
+  /* centralizar linha */
+  text-align: center;
+  /* borda curvada */
+  border-radius: 3px;
+  /* largura 100% */
+  width: 100%;
+  /* largura maxima de 90% */
+  max-width: 90%;
+  /* se for maior vai manter 90% mas a margin vai manter  */
+  margin: 32px auto;
+  /* padding 32 cima e embaixo e laterais com 64px */
+  padding: 32px 64px;
+  /* todos elementos dentro do display vai se manter alinhado um ao lado do outro */
+  display: flex;
+  /* vai padronizar a direção de cima pra baixo dos elementos */
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+form h2 {
+  /* espaçamento */
+  margin: 60px;
+  /* centralizar texto */
+  text-align: center;
+}
+tr {
+  text-align: center;
+  width: 4px;
+}
+form td.edit,
+thead {
+  text-align: left;
+}
+td button.editBtn,
+button.removeBtn {
+  margin-right: 5px;
+  width: 40%;
+  padding: 9px 0;
+
+  border-radius: 3px;
+  background-color: var(--primary-color);
+}
+td button.removeBtn {
+  margin-left: 5px;
+}
+
+div.input,.divCamera,
+.topnav {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+input,
+form.conteudo button {
+  border-radius: 3px;
+  /* reset appeareance */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* box  largura */
+  width: 100%;
+  /* preechimento interno */
+  padding: 16px 0;
+
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  /* cor de fundo transparente */
+  background-color: transparent;
+
+  outline: none;
+
+  /* text */
+  color: var(--text-color);
+  font-size: 1em;
+}
+
+form.conteudo button {
+  margin-top: 16px;
+  background-color: var(--primary-color);
+}
+/* procurando o irmao do input com o ~ */
+input ~ label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+  /* faz a transição da animação do input */
+  transition: 0.4s;
+}
+
+/* vai manter o input focado com a trsição do input ~ label */
+input:focus ~ label,
+/* vai manter o campo ativado mesmo se o campo for valido  */
+input:valid ~ label {
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+/* vai manter o input focado com a trsição do input ~ label */
+select:focus ~ label,
+/* vai manter o campo ativado mesmo se o campo for valido  */ 
+select:valid ~ label {
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+div.input span.error {
+  display: flex;
+
+  padding: 0;
+
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+div.input span.error.active {
+  border: 1px solid red;
+  padding: 0.4em;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}

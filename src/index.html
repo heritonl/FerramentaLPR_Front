@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Roboto:wght@100&display=swap"
+    rel="stylesheet" />
+
+  <title>SimulPLate</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style_crud.css" />
+
+</head>
+
+<body>
+  <div class="divSimul" hidden>
+
+    <form method="post" id="minhaFormCrud">
+      <button type="button" id="btnCrud">Cadastrar/Editar Cameras</button>
+
+      <div class="input">
+        <div class="topnav">
+        </div>
+        <div class="title">
+          <h2>Simulador</h2>
+        </div>
+        <select class="form-control tokenSimul" type="text" id="tokenSimul">
+          <!-- <option value="">Selecionar</option> -->
+        </select>
+      </div>
+      <div class="input">
+        <input type="number" id="Registro" class="form-control" />
+        <label>Número de Passagens</label>
+      </div>
+
+      <div class="input">
+        <input type="number" id="Intervalo" class="form-control" />
+        <label>Tempo em MS por Intervalo</label>
+
+      </div>
+
+      <button type="button" id="btnEnvio">Iniciar</button>
+
+    </form>
+    <div id="response">
+
+    </div>
+  </div>
+
+  <div class="divCrud">
+    <form id="minhaFormSimul">
+      <div>
+        <button type="button" id="btnSimul">Simulador</button>
+      </div>
+      <div class="input">
+        <div class="topnav">
+
+        </div>
+        <div class="title">
+          <h2>Cameras</h2>
+        </div>
+
+        <div class="card">
+          <div class="divCamera">
+            <input type="text" id="camera" class="form-control" />
+            <label for="">Camera</label>
+
+          </div>
+          <div class="input">
+            <input type="text" id="token" class="form-control" />
+            <label for="">Token</label>
+
+          </div>
+        </div>
+        <input type="hidden" id="idCrud" />
+        <button onclick="addNewCamera()" id="salvar" type="button">Salvar</button>
+        <button onclick="Cancelar()" type="reset">Cancelar</button>
+      </div>
+    </form>
+    <form id="table">
+      <table id="tabela">
+        <thead>
+          <th>ID</th>
+          <th>Camera</th>
+          <th>Token</th>
+          <th>Ações</th>
+        </thead>
+      </table>
+    </form>
+  </div>
+  <script>
+    const URL = 'http://192.168.100.113:3001';
+  </script>
+  <script src="./js/app.js"></script>
+  <script src="./js/crud.js"></script>
+</body>
+
+</html>
